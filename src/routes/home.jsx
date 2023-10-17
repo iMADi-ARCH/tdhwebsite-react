@@ -15,12 +15,16 @@ const Home = () => {
           thinking and creativity.
         </p>
         <div className="flex gap-5">
-          <button className="rounded-full bg-[#D7FF65] px-16 py-3">
-            Login
-          </button>
-          <button className="rounded-full bg-[#DADADA] px-16 py-3">
-            SignUp
-          </button>
+          <a href="/login">
+            <button className="rounded-full bg-[#D7FF65] px-16 py-3">
+              Login
+            </button>
+          </a>
+          <a href="/signup">
+            <button className="rounded-full bg-[#DADADA] px-16 py-3">
+              SignUp
+            </button>
+          </a>
         </div>
       </section>
 

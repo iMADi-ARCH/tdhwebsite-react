@@ -9,7 +9,18 @@ const Register = () => {
           <h1 className="text-4xl mb-3">Register</h1>
           <p className="text-lg">Fill in your details to create an account.</p>
           <InputField placeholder={"Name"} />
-          <InputField placeholder={"Name"} />
+          <select
+            className="w-full rounded-3xl px-5 py-3 bg-white border-2 border-[#D7FF65]"
+            name="course"
+            id="course"
+          >
+            <option selected disabled>
+              Select Course
+            </option>
+            <option value="course1">B-Tech</option>
+            <option value="course2">BBA</option>
+            <option value="course3">BSc</option>
+          </select>
           <InputField placeholder={"University Roll Number"} />
           <div className="flex justify-between w-full">
             <fieldset>

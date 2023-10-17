@@ -20,9 +20,9 @@ const Home = () => {
               Login
             </button>
           </a>
-          <a href="/signup">
+          <a href="/register">
             <button className="rounded-full bg-[#DADADA] px-16 py-3">
-              SignUp
+              Register
             </button>
           </a>
         </div>

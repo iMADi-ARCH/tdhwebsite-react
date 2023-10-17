@@ -8,6 +8,7 @@ import Home from "./routes/home";
 import Layout from "./layout";
 import Nav from "./components/shared/Nav";
 import Events from "./routes/events";
+import About from "./routes/about";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         >
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -28,7 +28,7 @@ const Home = () => {
         <div className="max-w-screen-xl mx-auto flex flex-col gap-5 items-center justify-center">
           <h1 className="relative text-4xl font-semibold">
             About Us
-            <div className="bg-[#D7FF65] w-32 h-1 absolute left-1/2 translate-x-10"></div>
+            <div className="bg-[#D7FF65] h-1 absolute left-0 right-0"></div>
           </h1>
           <p>
             The Designnovation Hub has the vision to create impactful
@@ -40,7 +40,7 @@ const Home = () => {
             workshops and sessions, facilitating team projects.
           </p>
           <a
-            href="#"
+            href="/about"
             className="text-xl py-4 px-10 rounded-full hover:bg-white hover:text-black transition-colors w-fit"
           >
             Learn More <span className="text-2xl">↗</span>

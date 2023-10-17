@@ -6,9 +6,11 @@ const Card = ({ imgPath, title, children, actionText }) => {
       <img src={imgPath} alt="event image" />
       <h1 className="text-3xl">{title}</h1>
       <p className="text-md">{children}</p>
-      <button className="px-14 py-2 rounded-full bg-white text-black self-start">
-        {actionText}
-      </button>
+      {actionText && (
+        <button className="px-14 py-2 rounded-full bg-white text-black self-start">
+          {actionText}
+        </button>
+      )}
     </div>
   );
 };

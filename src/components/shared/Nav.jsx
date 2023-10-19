@@ -12,10 +12,16 @@ const Nav = () => {
     () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const navLinkClassGenerator = ({ isActive, isPending }) => {
+    return `hover:-translate-y-1 transition-transform ${
+      isActive ? "text-[#544523]" : ""
+    }`;
+  };
+
   return (
-    <header className="w-full py-5 border-b px-5 sticky top-0 bg-white z-10">
+    <header className="w-full py-4 sticky top-0 border-b px-5 bg-white z-10">
       <div className="max-w-screen-xl flex justify-between items-center w-full mx-auto">
-        <img className="w-16" src="/assets/logo.jpg" alt="tdh logo" />
+        <img className="w-12" src="/assets/logo.jpg" alt="tdh logo" />
         <nav
           className={`gap-5 text-lg ${
             open
@@ -23,11 +29,21 @@ const Nav = () => {
               : "hidden md:flex"
           }`}
         >
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/events">Events</NavLink>
-          <NavLink to="/research">Research</NavLink>
-          <NavLink to="/blogs">Blogs</NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink className="" to="/">
+            Home
+          </NavLink>
+          <NavLink className={navLinkClassGenerator} to="/events">
+            Events
+          </NavLink>
+          <NavLink className={navLinkClassGenerator} to="/research">
+            Research
+          </NavLink>
+          <NavLink className={navLinkClassGenerator} to="/blogs">
+            Blogs
+          </NavLink>
+          <NavLink className={navLinkClassGenerator} to="/about">
+            About
+          </NavLink>
         </nav>
         <button
           onClick={() => setOpen((open) => !open)}

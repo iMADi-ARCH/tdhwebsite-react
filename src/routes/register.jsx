@@ -15,9 +15,27 @@ const Register = () => {
   const onDetailsChange = (event) => {
     setuserDetails({ ...userDetails, [event.target.name]: event.target.value });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(userDetails);
+    const response = await fetch("http://localhost:5000/api/studentSignUp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: userDetails.name,
+        email: userDetails.email,
+        password: userDetails.password,
+        univRoll: userDetails.univRoll,
+        gender: userDetails.gender,
+        course: userDetails.course,
+      }),
+    });
+
+    const json = await response.json();
+    console.log(json);
+
+    if (!json.success) alert("Enter Valid Credentials");
   };
   return (
     <section className="px-5 bg-black text-white flex flex-col items-center justify-center text-left py-32 gap-5 min-h-screen">

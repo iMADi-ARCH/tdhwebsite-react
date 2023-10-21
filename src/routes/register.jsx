@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import InputField from "../components/ui/InputField";
 
 const Register = () => {
   const initialDetails = {

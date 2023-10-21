@@ -38,10 +38,6 @@ router.post(
         //console.log("password wrong");
         return res.status(401).json({ error: "Incorrect credentials" });
       }
-      // if (!(userData.password === req.body.password)) {
-      //   console.log("here it occured");
-      //   return res.status(401).json({ error: "Incorrect credentials" });
-      // }
       const data = {
         studentUser: {
           id: userData.id,

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Student = require("../Models/Student");
+const bcrypt = require("bcrypt");
 const { body, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "tfuhtlpzhiopuhchukaopzdlizpalpzn";
@@ -24,19 +25,23 @@ router.post(
       const userData = await Student.findOne({ email });
 
       if (!userData) {
+        //console.log("User not found");
         return res.status(401).json({ error: "Incorrect credentials" });
       }
 
-      /* const isPasswordValid = await bcrypt.compare(
-          req.body.password,
-          userData.password
-        );
-  
-        if (!isPasswordValid) {
-          return res.status(401).json({ error: "Incorrect credentials" });
-        } */
-      if (!(userData.password === req.body.password))
+      const isPasswordValid = await bcrypt.compare(
+        req.body.password,
+        userData.password
+      );
+
+      if (!isPasswordValid) {
+        //console.log("password wrong");
         return res.status(401).json({ error: "Incorrect credentials" });
+      }
+      // if (!(userData.password === req.body.password)) {
+      //   console.log("here it occured");
+      //   return res.status(401).json({ error: "Incorrect credentials" });
+      // }
       const data = {
         studentUser: {
           id: userData.id,

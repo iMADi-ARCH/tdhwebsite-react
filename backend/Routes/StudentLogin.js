@@ -49,7 +49,7 @@ router.post(
       console.log(err);
       res.status(500).json({ error: "Server error" });
     }
-    console.log("Hi I reached");
+    //console.log("Hi I reached");
   }
 );
 

@@ -9,6 +9,7 @@ const Register = () => {
     univRoll: "",
     gender: "",
     email: "",
+    password: "",
   };
   const [userDetails, setuserDetails] = useState(initialDetails);
   const onDetailsChange = (event) => {
@@ -87,6 +88,15 @@ const Register = () => {
             placeholder={"Email"}
             value={userDetails.email}
             name="email"
+            type="email"
+            onChange={onDetailsChange}
+          />
+          <input
+            className="w-full rounded-3xl px-5 py-3 bg-white border-2 border-[#D7FF65]"
+            placeholder={"Password"}
+            type="password"
+            value={userDetails.password}
+            name="password"
             onChange={onDetailsChange}
           />
           <button

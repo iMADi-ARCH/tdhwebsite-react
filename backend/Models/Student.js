@@ -6,10 +6,16 @@ const StudentSchema = new Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   password: {
     type: String,
     required: true,
   },
+
   course: {
     type: String,
     required: true,
@@ -18,10 +24,9 @@ const StudentSchema = new Schema({
     type: String,
     required: true,
   },
-  email: {
+  univRoll: {
     type: String,
     required: true,
-    unique: true,
   },
 });
 

@@ -7,7 +7,7 @@ const SignUp = () => {
         <div className="flex gap-3 items-stretch mx-auto overflow-hidden bg-white text-black rounded-3xl">
           <form className="flex-1 flex flex-col items-center p-20">
             <h1 className="text-4xl mb-3">Sign Up</h1>
-            <div class="flex gap-5 my-10">
+            <div className="flex gap-5 my-10">
               <a className="" href="#">
                 fb
               </a>

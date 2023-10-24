@@ -36,7 +36,7 @@ const Nav = () => {
             Events
           </NavLink>
           <NavLink className={navLinkClassGenerator} to="/projects">
-            projects
+            Projects
           </NavLink>
           <NavLink className={navLinkClassGenerator} to="/blogs">
             Blogs

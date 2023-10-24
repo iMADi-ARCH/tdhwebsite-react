@@ -26,7 +26,7 @@ const Nav = () => {
           className={`gap-5 text-lg ${
             open
               ? "absolute flex flex-col top-full right-0 left-0 p-10 bg-white shadow-lg"
-              : "hidden md:flex"
+              : "hidden md:flex items-center"
           }`}
         >
           <NavLink className="" to="/">
@@ -35,8 +35,8 @@ const Nav = () => {
           <NavLink className={navLinkClassGenerator} to="/events">
             Events
           </NavLink>
-          <NavLink className={navLinkClassGenerator} to="/research">
-            Research
+          <NavLink className={navLinkClassGenerator} to="/projects">
+            Projects
           </NavLink>
           <NavLink className={navLinkClassGenerator} to="/blogs">
             Blogs
@@ -44,6 +44,9 @@ const Nav = () => {
           <NavLink className={navLinkClassGenerator} to="/about">
             About
           </NavLink>
+          <button className="rounded-full px-5 py-2 bg-black text-white hover:opacity-75 transition-opacity">
+            My Account
+          </button>
         </nav>
         <button
           onClick={() => setOpen((open) => !open)}

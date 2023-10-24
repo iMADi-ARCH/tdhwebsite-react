@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/ui/Card";
 import EventCard from "../components/ui/EventCard";
+import EventGallery from "../components/EventGallery";
 
 const images = [
   <img className="object-cover w-full h-full" src="/assets/background1.webp" />,
@@ -79,7 +80,7 @@ const Events = () => {
       <section className="bg-black text-white px-5 flex flex-col items-center justify-center text-left py-32 gap-5">
         <div className="max-w-screen-xl w-full mx-auto flex flex-col gap-10 items-start justify-center">
           <h1 className="relative text-4xl font-semibold">
-            Events within the month
+            Upcoming Events
             <div className="bg-[#D7FF65] h-1 absolute left-0 right-0"></div>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-5 w-full">
@@ -119,10 +120,12 @@ const Events = () => {
         </div>
       </section>
 
+      <EventGallery />
+
       <section className="bg-black text-white px-5 flex flex-col items-center justify-center text-left py-32 gap-5">
         <div className="max-w-screen-xl w-full mx-auto flex flex-col gap-10 items-start justify-center">
           <h1 className="relative text-4xl font-semibold">
-            Events within the month
+            Upcoming Events
             <div className="bg-[#D7FF65] h-1 absolute left-0 right-0"></div>
           </h1>
           <div className="flex flex-col gap-5 w-full max-w-5xl">

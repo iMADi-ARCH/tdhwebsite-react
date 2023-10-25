@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import InputField from "../components/ui/InputField";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const initialDetails = {
     email: "",
     password: "",
@@ -31,7 +33,29 @@ const Login = () => {
 
     if (!json.success) alert("Enter Valid Credentials");
     else {
-      localStorage.setItem("authToken", json.authToken);
+      localStorage.setItem("tdhAuthToken", json.authToken);
+      navigate("/dashboard/student");
+    }
+  };
+  const handleAdminSubmit = async (event) => {
+    event.preventDefault();
+    const response = await fetch("http://localhost:5000/api/adminLogin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: loginDetails.email,
+        password: loginDetails.password,
+      }),
+    });
+
+    const json = await response.json();
+
+    if (!json.success) alert("Enter Valid Credentials");
+    else {
+      localStorage.setItem("tdhAdminAuthToken", json.authToken);
+      navigate("/dashboard/admin");
     }
   };
   return (
@@ -56,12 +80,20 @@ const Login = () => {
             value={loginDetails.password}
             onChange={onDetailsChange}
           />
-          <button
-            className="px-10 py-3 rounded-full bg-[#D7FF65]"
-            onClick={handleSubmit}
-          >
-            Log In
-          </button>
+          <div>
+            <button
+              className="px-10 py-3 mx-1 rounded-full bg-[#D7FF65]"
+              onClick={handleSubmit}
+            >
+              Log In
+            </button>
+            <button
+              className="px-10 py-3 mx-1 rounded-full bg-[#e45959]"
+              onClick={handleAdminSubmit}
+            >
+              Log In as admin
+            </button>
+          </div>
           <div className="flex gap-5">
             <a href="#">fb</a>
             <a href="#">tw</a>

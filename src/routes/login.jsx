@@ -37,6 +37,27 @@ const Login = () => {
       navigate("/dashboard/student");
     }
   };
+  const handleAdminSubmit = async (event) => {
+    event.preventDefault();
+    const response = await fetch("http://localhost:5000/api/adminLogin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: loginDetails.email,
+        password: loginDetails.password,
+      }),
+    });
+
+    const json = await response.json();
+
+    if (!json.success) alert("Enter Valid Credentials");
+    else {
+      localStorage.setItem("authToken", json.authToken);
+      navigate("/dashboard/admin");
+    }
+  };
   return (
     <section className="px-5 bg-black text-white flex flex-col items-center justify-center text-left py-32 gap-5 min-h-screen">
       <div className="max-w-screen-xl w-full mx-auto flex flex-col gap-10 items-start justify-center">
@@ -66,7 +87,10 @@ const Login = () => {
             >
               Log In
             </button>
-            <button className="px-10 py-3 mx-1 rounded-full bg-[#e45959]">
+            <button
+              className="px-10 py-3 mx-1 rounded-full bg-[#e45959]"
+              onClick={handleAdminSubmit}
+            >
               Log In as admin
             </button>
           </div>

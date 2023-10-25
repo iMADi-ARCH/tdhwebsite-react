@@ -59,12 +59,17 @@ const Login = () => {
             value={loginDetails.password}
             onChange={onDetailsChange}
           />
-          <button
-            className="px-10 py-3 rounded-full bg-[#D7FF65]"
-            onClick={handleSubmit}
-          >
-            Log In
-          </button>
+          <div>
+            <button
+              className="px-10 py-3 mx-1 rounded-full bg-[#D7FF65]"
+              onClick={handleSubmit}
+            >
+              Log In
+            </button>
+            <button className="px-10 py-3 mx-1 rounded-full bg-[#e45959]">
+              Log In as admin
+            </button>
+          </div>
           <div className="flex gap-5">
             <a href="#">fb</a>
             <a href="#">tw</a>

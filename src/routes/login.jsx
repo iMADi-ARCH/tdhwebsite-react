@@ -33,7 +33,7 @@ const Login = () => {
 
     if (!json.success) alert("Enter Valid Credentials");
     else {
-      localStorage.setItem("authToken", json.authToken);
+      localStorage.setItem("tdhAuthToken", json.authToken);
       navigate("/dashboard/student");
     }
   };
@@ -54,7 +54,7 @@ const Login = () => {
 
     if (!json.success) alert("Enter Valid Credentials");
     else {
-      localStorage.setItem("authToken", json.authToken);
+      localStorage.setItem("tdhAdminAuthToken", json.authToken);
       navigate("/dashboard/admin");
     }
   };

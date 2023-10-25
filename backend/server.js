@@ -26,6 +26,8 @@ app.use(express.json());
 app.use("/api", require("./Routes/StudentLogin"));
 //student Signup
 app.use("/api", require("./Routes/StudentSignUp"));
+//admin login
+app.use("/api", require("./Routes/AdminLogin"));
 
 app.get("/", (req, res) => {
   res.send("Hello World");

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import InputField from "../components/ui/InputField";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const initialDetails = {
     email: "",
     password: "",
@@ -32,6 +34,7 @@ const Login = () => {
     if (!json.success) alert("Enter Valid Credentials");
     else {
       localStorage.setItem("authToken", json.authToken);
+      navigate("/dashboard/student");
     }
   };
   return (

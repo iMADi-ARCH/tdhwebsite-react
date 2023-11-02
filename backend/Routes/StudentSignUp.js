@@ -34,12 +34,13 @@ router.post(
       });
       res.json({ success: true });
     } catch (err) {
-      if (err.code === 11000) {
+      if (err.code === 11000 && err.keyPattern.email) {
+        // If the error code is 11000 and it's for the email field
         res
           .status(400)
-          .json({ success: false, message: "duplicate key error" });
+          .json({ success: false, message: "Email already registered" });
       } else {
-        res.status(500).json({ success: false, message: "An error occured" });
+        res.status(500).json({ success: false, message: "An error occurred" });
       }
     }
   }

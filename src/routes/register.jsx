@@ -33,8 +33,8 @@ const Register = () => {
 
     const json = await response.json();
     //console.log(json);
-
-    if (!json.success) alert("Enter Valid Credentials");
+    if (!json.success) alert(json.message);
+    //if (!json.success) alert("Enter Valid Credentials");
   };
   return (
     <section className="px-5 bg-black text-white flex flex-col items-center justify-center text-left py-32 gap-5 min-h-screen">

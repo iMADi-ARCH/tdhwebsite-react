@@ -1,14 +1,17 @@
 import React from "react";
 import EventListItem from "../../components/EventListItem";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
   return (
     <section className="px-5 bg-black text-white flex flex-col items-center justify-center text-center py-32 gap-5">
       <div className="max-w-screen-xl w-full mx-auto flex flex-col gap-5">
         <div className="flex w-full gap-10 mb-10">
-          <button className="text-lg flex-1 bg-white text-black p-10 rounded">
-            Create Event
-          </button>
+          <Link to="/adminAddEvent">
+            <button className="text-lg flex-1 bg-white text-black p-10 rounded">
+              Create Event
+            </button>
+          </Link>
           <button className="text-lg flex-1 bg-white text-black p-10 rounded">
             Upload Photos
           </button>

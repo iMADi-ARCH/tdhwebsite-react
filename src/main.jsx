@@ -17,6 +17,7 @@ import Blogs from "./routes/blogs";
 import Projects from "./routes/projects";
 import AdminPrivateRoutes from "./util/AdminPrivateRoutes";
 import StudentPrivateRoutes from "./util/StudentPrivateRoutes";
+import addEvent from "./routes/dashboard/addEvent";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -41,6 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             {/* ADMIN ROUTES */}
             <Route element={<AdminPrivateRoutes />}>
               <Route path="admin" element={<Admin />} />
+              <Route path="/adminAddEvent" element={<addEvent />} />
             </Route>
             {/* STUDENT ROUTES */}
             <Route element={<StudentPrivateRoutes />}>
